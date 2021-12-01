@@ -19,7 +19,7 @@ order  by w.data_rozpoczecia, ew.kolejnosc;
 select s.nazwa, ifnull(count(ew.sektor),0) from sektor s
 left join etapy_wyprawy ew on s.id_sektora = ew.sektor group by s.id_sektora;
 
-select k.idKreatury, if(count(u.id_wyprawy) ,"bral udzial","nie bral") from   uczestnicy u
+select k.idKreatury, if(count(u.id_wyprawy)>0 ,"bral udzial","nie bral") from   uczestnicy u
 left join kreatura k on k.idKreatury=u.id_uczestnika group by id_uczestnika;
 
 
