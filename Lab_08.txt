@@ -27,7 +27,8 @@ inner join kategoria k on t.kategoria = k.id_kategori
 inner join stan_magazynowy s on t.id_towaru=s.towar
 order by ilosc desc; 
 
-select * from zamowienie where status_zamowienia = 6;
+select z.id_zamowienia, z.numer_zamowienia, nazwa_statusu_zamowienia from zamowienie z
+inner join status_zamowienia s on z.status_zamowienia = s.id_statusu_zamowienia where id_statusu_zamowienia = "6";
 
 select id_klienta, nazwa_krotka from klient k
 inner join adres_klienta a on a.klient=k.id_klienta
